@@ -1,0 +1,21 @@
+,Condition,AgentSuccessRate,ParticipantSuccessRate,BehavioralUncertainty,CognitiveAccuracy,CognitiveUncertainty,CognitionBehaviorAlignment,AgentBehaviorPredictionAccuracy
+0,"Role=Adversary, Mode=Verbal_NonVerbal, ToM=0, FacialExp=0",0.0,0.98,0.02,0.28,0.0,0.27,0.3
+1,"Role=Adversary, Mode=Verbal_NonVerbal, ToM=0, FacialExp=1, Sensitivity=0.0",0.02,0.94,0.04,0.3,0.0,0.31,0.46
+2,"Role=Adversary, Mode=Verbal_NonVerbal, ToM=0, FacialExp=1, Sensitivity=0.5",0.02,0.94,0.04,0.18,0.0,0.18,0.31
+3,"Role=Adversary, Mode=Verbal_NonVerbal, ToM=0, FacialExp=1, Sensitivity=1.0",0.02,0.97,0.01,0.22,0.0,0.22,0.3
+4,"Role=Adversary, Mode=Verbal_NonVerbal, ToM=1, FacialExp=0",0.26,0.61,0.13,0.22,0.0,0.32,0.38
+5,"Role=Adversary, Mode=Verbal_NonVerbal, ToM=1, FacialExp=1, Sensitivity=0.0",0.82,0.11,0.07,0.3,0.0,0.61,0.42
+6,"Role=Adversary, Mode=Verbal_NonVerbal, ToM=1, FacialExp=1, Sensitivity=0.5",0.76,0.12,0.12,0.31,0.0,0.56,0.37
+7,"Role=Adversary, Mode=Verbal_NonVerbal, ToM=1, FacialExp=1, Sensitivity=1.0",0.09,0.83,0.08,0.24,0.0,0.24,0.35
+8,"Role=Adversary, Mode=Verbal, Hypothesis=0",0.4,0.39,0.21,0.15,0.38,0.21,0.22
+9,"Role=Adversary, Mode=Verbal, Hypothesis=1",0.38,0.4,0.22,0.31,0.22,0.28,0.25
+10,"Role=Adversary, Mode=Verbal, Hypothesis=2, ToM=0",0.36,0.38,0.26,0.24,0.25,0.18,0.28
+11,"Role=Adversary, Mode=Verbal, Hypothesis=2, ToM=1",0.38,0.42,0.2,0.3,0.24,0.21,0.24
+12,"Role=Adversary, Mode=NonVerbal, ToM=0, FacialExp=0",0.02,0.97,0.01,0.16,0.02,0.18,0.25
+13,"Role=Adversary, Mode=NonVerbal, ToM=0, FacialExp=1, Sensitivity=0.0",0.04,0.93,0.03,0.22,0.11,0.24,0.14
+14,"Role=Adversary, Mode=NonVerbal, ToM=0, FacialExp=1, Sensitivity=0.5",0.0,1.0,0.0,0.16,0.05,0.16,0.09
+15,"Role=Adversary, Mode=NonVerbal, ToM=0, FacialExp=1, Sensitivity=1.0",0.01,0.95,0.04,0.13,0.1,0.15,0.08
+16,"Role=Adversary, Mode=NonVerbal, ToM=1, FacialExp=0",0.34,0.57,0.09,0.15,0.03,0.4,0.32
+17,"Role=Adversary, Mode=NonVerbal, ToM=1, FacialExp=1, Sensitivity=0.0",0.79,0.1,0.11,0.22,0.07,0.59,0.18
+18,"Role=Adversary, Mode=NonVerbal, ToM=1, FacialExp=1, Sensitivity=0.5",0.8,0.14,0.06,0.19,0.06,0.64,0.08
+19,"Role=Adversary, Mode=NonVerbal, ToM=1, FacialExp=1, Sensitivity=1.0",0.05,0.9,0.05,0.13,0.05,0.15,0.15

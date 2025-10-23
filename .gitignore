@@ -109,9 +109,6 @@ desktop.ini
 linecounter.json
 linecounter.txt
 
-# Raw data files (large simulation data)
-RawData/
-
 # Unity - Removed unnecessary assets for reproducibility
 Unity/Assets/Overtone/
 Unity/Assets/Chess MEGA-pack/

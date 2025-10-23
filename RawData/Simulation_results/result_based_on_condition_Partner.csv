@@ -1,0 +1,21 @@
+,Condition,AgentSuccessRate,ParticipantSuccessRate,BehavioralUncertainty,CognitiveAccuracy,CognitiveUncertainty,CognitionBehaviorAlignment,AgentBehaviorPredictionAccuracy
+0,"Role=Partner, Mode=Verbal_NonVerbal, ToM=0, FacialExp=0",0.98,0.0,0.02,0.29,0.0,0.28,0.34
+1,"Role=Partner, Mode=Verbal_NonVerbal, ToM=0, FacialExp=1, Sensitivity=0.0",0.94,0.02,0.04,0.06,0.0,0.08,0.19
+2,"Role=Partner, Mode=Verbal_NonVerbal, ToM=0, FacialExp=1, Sensitivity=0.5",0.92,0.04,0.04,0.07,0.0,0.1,0.22
+3,"Role=Partner, Mode=Verbal_NonVerbal, ToM=0, FacialExp=1, Sensitivity=1.0",0.97,0.02,0.01,0.12,0.0,0.14,0.22
+4,"Role=Partner, Mode=Verbal_NonVerbal, ToM=1, FacialExp=0",0.95,0.0,0.05,0.21,0.0,0.21,0.25
+5,"Role=Partner, Mode=Verbal_NonVerbal, ToM=1, FacialExp=1, Sensitivity=0.0",0.82,0.11,0.07,0.06,0.0,0.12,0.12
+6,"Role=Partner, Mode=Verbal_NonVerbal, ToM=1, FacialExp=1, Sensitivity=0.5",0.86,0.1,0.04,0.04,0.0,0.14,0.21
+7,"Role=Partner, Mode=Verbal_NonVerbal, ToM=1, FacialExp=1, Sensitivity=1.0",0.99,0.0,0.01,0.07,0.0,0.07,0.14
+8,"Role=Partner, Mode=Verbal, Hypothesis=0",0.54,0.31,0.15,0.17,0.47,0.17,0.23
+9,"Role=Partner, Mode=Verbal, Hypothesis=1",0.44,0.35,0.21,0.22,0.25,0.16,0.25
+10,"Role=Partner, Mode=Verbal, Hypothesis=2, ToM=0",0.36,0.36,0.28,0.22,0.35,0.25,0.26
+11,"Role=Partner, Mode=Verbal, Hypothesis=2, ToM=1",0.47,0.33,0.2,0.23,0.33,0.16,0.19
+12,"Role=Partner, Mode=NonVerbal, ToM=0, FacialExp=0",0.97,0.02,0.01,0.15,0.03,0.17,0.1
+13,"Role=Partner, Mode=NonVerbal, ToM=0, FacialExp=1, Sensitivity=0.0",0.99,0.0,0.01,0.17,0.05,0.17,0.04
+14,"Role=Partner, Mode=NonVerbal, ToM=0, FacialExp=1, Sensitivity=0.5",0.99,0.0,0.01,0.08,0.08,0.08,0.04
+15,"Role=Partner, Mode=NonVerbal, ToM=0, FacialExp=1, Sensitivity=1.0",0.99,0.01,0.0,0.22,0.03,0.23,0.05
+16,"Role=Partner, Mode=NonVerbal, ToM=1, FacialExp=0",0.97,0.0,0.03,0.16,0.03,0.15,0.23
+17,"Role=Partner, Mode=NonVerbal, ToM=1, FacialExp=1, Sensitivity=0.0",0.86,0.09,0.05,0.1,0.12,0.15,0.07
+18,"Role=Partner, Mode=NonVerbal, ToM=1, FacialExp=1, Sensitivity=0.5",0.96,0.03,0.01,0.06,0.07,0.09,0.07
+19,"Role=Partner, Mode=NonVerbal, ToM=1, FacialExp=1, Sensitivity=1.0",0.99,0.0,0.01,0.2,0.07,0.2,0.09
