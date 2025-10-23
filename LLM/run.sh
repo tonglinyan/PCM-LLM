@@ -1,0 +1,1 @@
+torchrun --nproc_per_node 1 inference_server.py --history_saving --max_seq_len 4096 --max_gen_len 4096 --model_size 8B --model_name llama3.1 --language en --remote

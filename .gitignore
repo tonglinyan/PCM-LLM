@@ -1,0 +1,169 @@
+# .NET Build outputs
+bin/
+obj/
+out/
+
+# Visual Studio / Visual Studio Code
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vsidx
+*.v2
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio cache/options
+.vs/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Log files
+*.log
+log.json
+logs_error.json
+*.logs
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# Model weights and checkpoints (too large for git)
+*.pth
+*.pt
+*.bin
+*.ckpt
+*.safetensors
+*.onnx
+
+# HuggingFace cache
+.cache/
+models/
+
+# MongoDB
+*.bson
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Output files
+linecounter.json
+linecounter.txt
+
+# Raw data files (large simulation data)
+RawData/
+
+# Unity - Removed unnecessary assets for reproducibility
+Unity/Assets/Overtone/
+Unity/Assets/Chess MEGA-pack/
+Unity/Assets/PBR Table/
+Unity/Assets/Horror School Props/
+Unity/Assets/Imported/
+Unity/Assets/Standard Assets/
+Unity/Assets/BlendShapePresetTool/
+Unity/Assets/Samples/
+Unity/Assets/Cartoon Wooden Box/
+Unity/Assets/Lowpoly Wooden Chest/
+Unity/Assets/pottedPlant/
+Unity/Assets/Food Pack-Demo/
+Unity/Assets/test.asset*
+Unity/Assets/Animators/dotnet-sdk-*.exe
+Unity/Assets/Animators/*.zip
+Unity/Assets/Models/Characters/MatthieuSympatetic/
+Unity/Assets/Models/Characters/MatthieuParaSympatetic/
+Unity/Assets/Models/Characters/AnneSymp/
+Unity/Assets/Models/Characters/AnnePara/
+Unity/Assets/Modern Studio Apartment/
+Unity/Assets/SpaceZeta_RusticSmallCabinet/
+Unity/Assets/Paintings/
+Unity/Assets/RealisticEyeMovements/
+
+# Unity - External commercial/licensed packages (redistribution concerns)
+Unity/Assets/Oculus/
+Unity/Assets/SteamVR/
+Unity/Assets/SteamVR_Resources/
+Unity/Assets/BNG Framework/
+Unity/Assets/Crazy Minnow Studio/
+Unity/Assets/Plugins/Crazy Minnow Studio/
+Unity/Assets/Plugins/RootMotion/
+Unity/Assets/Plugins/cc_unity_tools_HDRP*/
+Unity/Assets/MeshingFeaturePlugin/
+Unity/Assets/Unity-SerializableDictionary/
+
+# Unity - Removed decorative assets from Objects folder
+Unity/Assets/Objects/
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+project.assets.json
+project.fragment.lock.json
+
+# CI/CD and Deployment Configuration
+.gitlab-ci.yml
+Dockerfile
+docker-compose.yml
+.dockerignore

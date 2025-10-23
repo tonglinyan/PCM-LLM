@@ -1,0 +1,17 @@
+torch
+fairscale
+fire
+blobfile
+transformers
+aiohttp
+aioconsole
+flash_attn
+qwen-vl-utils
+vllm
+
+timm>=0.9.16
+accelerate
+sentencepiece
+attrdict
+einops
+pymongo

@@ -1,0 +1,310 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d0004964225e44a99fbf9a01ad263e, type: 3}
+  m_Name: VirtualHumanPreset
+  m_EditorClassIdentifier: 
+  m_presets:
+  - name: AU1 - Inner Brow Raise
+    m_blendShapes:
+    - name: Brow_Raise_Inner_R
+      weight: 1
+    - name: Brow_Raise_Inner_L
+      weight: 1
+    blendMode: 0
+  - name: AU2 - Outer brow Raiser
+    m_blendShapes:
+    - name: Brow_Raise_Outer_R
+      weight: 0.7
+    - name: Brow_Raise_Outer_L
+      weight: 0.7
+    - name: Brow_Raise_R
+      weight: 0.2
+    - name: Brow_Raise_L
+      weight: 0.2
+    blendMode: 0
+  - name: AU4 - Brow Lowerer
+    m_blendShapes:
+    - name: Brow_Drop_R
+      weight: 1
+    - name: Brow_Drop_L
+      weight: 1
+    blendMode: 0
+  - name: AU5 - Upper lid raiser
+    m_blendShapes:
+    - name: Eye_Wide_R
+      weight: 1
+    - name: Eye_Wide_L
+      weight: 1
+    blendMode: 0
+  - name: AU6 - Cheek raiser
+    m_blendShapes:
+    - name: Cheek_Raise_R
+      weight: 1
+    - name: Cheek_Raise_L
+      weight: 1
+    - name: Eye_Squint_R
+      weight: 0.7
+    - name: Eye_Squint_L
+      weight: 0.7
+    - name: Brow_Drop_R
+      weight: 0.2
+    - name: Brow_Drop_L
+      weight: 0.2
+    blendMode: 0
+  - name: AU7 - Lid tightener
+    m_blendShapes:
+    - name: Eye_Squint_R
+      weight: 1
+    - name: Eye_Squint_L
+      weight: 1
+    blendMode: 0
+  - name: AU43 - Eye closure
+    m_blendShapes:
+    - name: Eye_Blink
+      weight: 1
+    blendMode: 0
+  - name: AU9 - Nose wrinkler
+    m_blendShapes:
+    - name: Brow_Drop_L
+      weight: 0.64
+    - name: Brow_Drop_R
+      weight: 0.621
+    - name: Nose_Scrunch
+      weight: 1.15
+    - name: Mouth_Top_Lip_Up
+      weight: 0.66
+    - name: Mouth_Up
+      weight: 0.79
+    blendMode: 0
+  - name: AU10 - Upper lip raiser
+    m_blendShapes:
+    - name: Mouth_Top_Lip_Up
+      weight: 1
+    - name: Nose_Flanks_Raise
+      weight: 1
+    - name: Nose_Flank_Raise_R
+      weight: 0.3
+    - name: Nose_Flank_Raise_L
+      weight: 0.3
+    - name: Mouth_Lips_Open
+      weight: 0.213
+    - name: Mouth_Bottom_Lip_Under
+      weight: 1
+    blendMode: 0
+  - name: AU15 - Lip corner depressor
+    m_blendShapes:
+    - name: Mouth_Frown_L
+      weight: 0.9
+    - name: Mouth_Frown_R
+      weight: 0.9
+    - name: Mouth_Widen
+      weight: 0.4
+    blendMode: 0
+  - name: AU17 - Chin raiser
+    m_blendShapes:
+    - name: Mouth_Up
+      weight: 1
+    - name: Mouth_Widen_Sides
+      weight: 0.059
+    - name: Mouth_Widen
+      weight: 0.611
+    - name: Mouth_Frown
+      weight: 0.311
+    - name: Mouth_Top_Lip_Up
+      weight: 0.231
+    blendMode: 0
+  - name: AU14 - Dimpler
+    m_blendShapes:
+    - name: Mouth_Dimple_R
+      weight: 1
+    - name: Mouth_Dimple_L
+      weight: 1
+    - name: Mouth_Widen
+      weight: 0.541
+    blendMode: 0
+  - name: AU20 - Lip stretcher
+    m_blendShapes:
+    - name: Mouth_Widen_Sides
+      weight: 0.617
+    - name: Mouth_Widen
+      weight: 1.039
+    - name: Mouth_Frown_L
+      weight: 0.236
+    - name: Mouth_Frown_R
+      weight: 0.226
+    - name: Mouth_Lips_Open
+      weight: 0.049
+    blendMode: 0
+  - name: AU11 - Nasolabial  furrow deepener
+    m_blendShapes:
+    - name: Mouth_Top_Lip_Up
+      weight: 0.9
+    - name: Mouth_Widen
+      weight: 0.4
+    - name: Nose_Flank_Raise_R
+      weight: 0.3
+    - name: Nose_Flank_Raise_L
+      weight: 0.3
+    - name: Mouth_Up
+      weight: 0.2
+    - name: Mouth_Bottom_Lip_Under
+      weight: 0.6
+    blendMode: 0
+  - name: AU12 - Lip corner puller
+    m_blendShapes:
+    - name: Mouth_Smile
+      weight: 0.56
+    - name: Mouth_Smile_L
+      weight: 0.337
+    - name: Mouth_Smile_R
+      weight: 0.331
+    - name: Cheek_Raise_L
+      weight: 0.085
+    - name: Cheek_Raise_R
+      weight: 0.085
+    blendMode: 0
+  - name: AU13 - Sharp lip puller
+    m_blendShapes:
+    - name: Mouth_Smile
+      weight: 0.85
+    - name: Cheek_Raise_R
+      weight: 0.066
+    - name: Cheek_Raise_L
+      weight: 0.082
+    - name: Mouth_Smile_L
+      weight: 0.753
+    - name: Mouth_Smile_R
+      weight: 0.749
+    blendMode: 0
+  - name: AU18 - Lip puckerer
+    m_blendShapes:
+    - name: Mouth_Pucker
+      weight: 1
+    blendMode: 0
+  - name: AU22 - Lip funneler
+    m_blendShapes:
+    - name: Mouth_Pucker_Open
+      weight: 1
+    blendMode: 0
+  - name: AU23 - Lip tightener
+    m_blendShapes:
+    - name: Mouth_Lips_Tight
+      weight: 0.437
+    - name: Mouth_Widen
+      weight: 0.281
+    - name: Mouth_Plosive
+      weight: 0.287
+    - name: Mouth_Top_Lip_Up
+      weight: 0.274
+    - name: Mouth_Lips_Tuck
+      weight: 0.772
+    - name: Mouth_Bottom_Lip_Bite
+      weight: 0.005
+    - name: Chin open
+      weight: 0.039
+    - name: Mouth_Top_Lip_Under
+      weight: 0.078
+    blendMode: 0
+  - name: AU24 - Lip pressor
+    m_blendShapes:
+    - name: Tight
+      weight: 0.177
+    - name: Mouth_Lips_Open
+      weight: 0.032
+    - name: Mouth_Widen_Sides
+      weight: 0.154
+    - name: Mouth_Plosive
+      weight: 1
+    - name: Mouth_Bottom_Lip_Under
+      weight: 0.309
+    - name: Mouth_Frown
+      weight: 0.015
+    blendMode: 0
+  - name: AU25 - Lip part
+    m_blendShapes:
+    - name: Open
+      weight: 1
+    - name: Mouth_Lips_Open
+      weight: 0.3
+    blendMode: 0
+  - name: AU16 - Lower lip depressor
+    m_blendShapes:
+    - name: Mouth_Open
+      weight: 0.7
+    blendMode: 0
+  - name: DA19 (+27) - Tongue show
+    m_blendShapes:
+    - name: Tongue_Out
+      weight: 1
+    - name: Merged_Open_Mouth
+      weight: 1
+    - name: Mouth_Lips_Tuck
+      weight: 0.3
+    blendMode: 0
+  - name: AU26 - Jaw drop
+    m_blendShapes:
+    - name: Merged_Open_Mouth
+      weight: 0.3
+    - name: Chin open
+      weight: 0.122
+    blendMode: 0
+  - name: AU27 - Mouth stretch
+    m_blendShapes:
+    - name: Merged_Open_Mouth
+      weight: 1
+    - name: Mouth_Lips_Part
+      weight: 1
+    - name: Mouth_Plosive
+      weight: 0.472
+    - name: Chin open
+      weight: 0.467
+    - name: Mouth_Pucker
+      weight: 0.378
+    - name: Mouth_Pucker_Open
+      weight: 0.185
+    blendMode: 0
+  - name: DA35 - Suck
+    m_blendShapes:
+    - name: Cheek_Suck
+      weight: 1
+    blendMode: 0
+  - name: AU38 - Nostril dilatator
+    m_blendShapes:
+    - name: Nose_Nostrils_Flare
+      weight: 1
+    blendMode: 0
+  - name: AU28* - Lips suck
+    m_blendShapes:
+    - name: Mouth_Lips_Tuck
+      weight: 0.468
+    - name: Mouth_Plosive
+      weight: 0.707
+    - name: Mouth_Blow
+      weight: 0.147
+    - name: Mouth_Top_Lip_Up
+      weight: 0.486
+    - name: Mouth_Top_Lip_Under
+      weight: 0.637
+    - name: Mouth_Bottom_Lip_Under
+      weight: 0.706
+    blendMode: 0
+  - name: DA34 - Puff
+    m_blendShapes:
+    - name: Cheek_Blow_L
+      weight: 0.8
+    - name: Cheek_Blow_R
+      weight: 0.8
+    - name: Mouth_Lips_Tight
+      weight: 0.8
+    - name: Mouth_Frown
+      weight: 0.2
+    blendMode: 0

@@ -1,0 +1,259 @@
+{
+  "Objects": {
+    "Positioning": [
+      {
+        "Position": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "LookAt": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "Size": 0.0,
+        "Type": 0
+      },
+      {
+        "Position": [
+          -1.0,
+          0.0,
+          1.0
+        ],
+        "LookAt": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "Size": 0.0,
+        "Type": 0
+      }
+    ]
+  },
+  "Agents": {
+    "ActionTags": [
+      [
+        [
+          "stare",
+          "facial_express",
+          "dynamic"
+        ],
+        [
+          "walk"
+        ]
+      ],
+      [
+        [
+          "stare",
+          "facial_express",
+          "dynamic"
+        ],
+        [
+          "stare"
+        ]
+      ]
+    ],
+    "Positioning": [
+      {
+        "Position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "LookAt": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "Size": 0.0,
+        "Type": 0
+      },
+      {
+        "Position": [
+          0.0,
+          0.0,
+          2.0
+        ],
+        "LookAt": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "Size": 0.0,
+        "Type": 0
+      }
+    ],
+    "Preferences": [
+      [
+        [
+          0.5,
+          0.0,
+          1.0,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      [
+        [
+          0.5,
+          0.0,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    ],
+    "TomInfluence": [
+      [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ]
+    ],
+    "TomUpdate": [
+      [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ]
+    ],
+    "MutualLoveStep": [
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "Emogain": [
+      10.0,
+      10.0
+    ],
+    "TomPredict": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "Speed": [
+      {
+        "RealSpeed": 90.0,
+        "ProjectionSpeed": 90.0,
+        "ProjectionSpeedIncrement": 0.0
+      },
+      {
+        "RealSpeed": 90.0,
+        "ProjectionSpeed": 90.0,
+        "ProjectionSpeedIncrement": 0.0
+      }
+    ],
+    "Anxious": [
+      false,
+      false
+    ],
+    "PhysiologicalReactivity": [
+      1.0,
+      1.0
+    ],
+    "FacialReactivity": [
+      1.0,
+      1.0
+    ],
+    "PhysiologicalSensitivity": [
+      1.0,
+      0.5
+    ],
+    "VoluntaryPhysiologicalWeight": [
+      0.0,
+      0.0
+    ],
+    "VoluntaryFacialWeight": [
+      1.0,
+      0.0
+    ]
+  },
+  "Settings": {
+    "Simulation": {
+      "Speed": 0.0,
+      "NSigma": 100,
+      "NPsyS": 1000,
+      "Sevuncertaingain": 0.065,
+      "SensoryEvidenceUpdateWeight": 10.0,
+      "Neutralref": 0.5,
+      "SpatialStat": {
+        "C": 0.01,
+        "Volume": 3.0,
+        "GaussianDisp": 27.0,
+        "AmplificationFactor": 30.0
+      },
+      "AlgSelection": "best",
+      "Certainty": {
+        "SigmaDistanceFactor": 0.01,
+        "SigmaSharpnessFactor": 10.0,
+        "UpdateUncertFactor": 10.0
+      },
+      "Randomization": [],
+      "MinDist": 60.0,
+      "GoalPredict": false
+    }
+  }
+}

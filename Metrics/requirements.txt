@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+seaborn
+pymongo
+scipy
+nltk
+rouge
+bert-score
+sentence-transformers
+ipywidgets
+tqdm

@@ -1,0 +1,259 @@
+{
+  "Objects": {
+    "Positioning": [
+      {
+        "Position": [
+          1.6000000238418579,
+          0.69800007343292236,
+          -5.9604644775390625E-08
+        ],
+        "LookAt": [
+          0.0,
+          -1.0,
+          1.7881393432617188E-07
+        ],
+        "Size": 0.0,
+        "Type": 0
+      },
+      {
+        "Position": [
+          -1.6000000238418579,
+          0.69799995422363281,
+          -5.9604644775390625E-08
+        ],
+        "LookAt": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "Size": 0.0,
+        "Type": 0
+      }
+    ]
+  },
+  "Agents": {
+    "ActionTags": [
+      [
+        [
+          "walk",
+          "rotate"
+        ],
+        [
+          "walk",
+          "rotate"
+        ]
+      ],
+      [
+        [
+          "walk",
+          "rotate"
+        ],
+        [
+          "walk",
+          "rotate"
+        ]
+      ]
+    ],
+    "Positioning": [
+      {
+        "Position": [
+          0.0,
+          0.0,
+          -3.2639999389648438
+        ],
+        "LookAt": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "Size": 0.0,
+        "Type": 0
+      },
+      {
+        "Position": [
+          0.0,
+          0.014999999664723873,
+          3.2790000438690186
+        ],
+        "LookAt": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "Size": 0.0,
+        "Type": 0
+      }
+    ],
+    "Preferences": [
+      [
+        [
+          0.5,
+          0.7,
+          0.8,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    ],
+    "TomInfluence": [
+      [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ]
+    ],
+    "TomUpdate": [
+      [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ]
+    ],
+    "MutualLoveStep": [
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "Emogain": [
+      10.0,
+      10.0
+    ],
+    "TomPredict": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "Speed": [
+      {
+        "RealSpeed": 80.0,
+        "ProjectionSpeed": 80.0,
+        "ProjectionSpeedIncrement": 0.0
+      },
+      {
+        "RealSpeed": 80.0,
+        "ProjectionSpeed": 80.0,
+        "ProjectionSpeedIncrement": 0.0
+      }
+    ],
+    "Anxious": [
+      false,
+      false
+    ],
+    "PhysiologicalReactivity": [
+      1.0,
+      1.0
+    ],
+    "FacialReactivity": [
+      1.0,
+      1.0
+    ],
+    "PhysiologicalSensitivity": [
+      0.5,
+      0.0
+    ],
+    "VoluntaryPhysiologicalWeight": [
+      0.5,
+      0.5
+    ],
+    "VoluntaryFacialWeight": [
+      0.0,
+      0.0
+    ]
+  },
+  "Settings": {
+    "Simulation": {
+      "Speed": 0.0,
+      "NSigma": 100,
+      "NPsyS": 1000,
+      "Sevuncertaingain": 0.01,
+      "SensoryEvidenceUpdateWeight": 10.0,
+      "Neutralref": 0.5,
+      "SpatialStat": {
+        "C": 0.01,
+        "Volume": 15.0,
+        "GaussianDisp": 50.0,
+        "AmplificationFactor": 15.0
+      },
+      "AlgSelection": "best",
+      "Certainty": {
+        "SigmaDistanceFactor": 0.01,
+        "SigmaSharpnessFactor": 10.0,
+        "UpdateUncertFactor": 10.0
+      },
+      "Randomization": [],
+      "MinDist": 50.0,
+      "GoalPredict": false
+    }
+  }
+}
