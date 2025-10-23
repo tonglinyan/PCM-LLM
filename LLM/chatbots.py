@@ -68,34 +68,7 @@ class LlamaChatBot(BaseChatBot):
         print(output_prompt)   
         print("Inference time: \n", time.time()-start_time)     
 
-        if self.task == "QA":
-            self.inner, self.expressed = self.post_processing(output_prompt)
-            print("\n --- Generated text --- ")
-            print("Original output: \n", output_prompt)
-            
-            print("\nProcessed output: ")
-            print("Inner speech: ", self.inner, "\nOutput: ", self.expressed)
-            return self.expressed
-        
-        elif self.task == "PU":
-            self.updated_preference = self.preference_postprocessing(output_prompt)
-            print("\n --- Updated preference --- ")
-            print("Original output: \n", output_prompt)
-            print("\nProcessed preference: \n", self.updated_preference)
-            
-            return self.updated_preference
-        
-        elif self.task == "AP":
-            self.updated_preference = self.action_postprocessing(output_prompt)
-            print("\n --- Predicted Next Action --- ")
-            print("Original output: \n", output_prompt)
-            print("\nProcessed output: \n", self.updated_preference)
-            
-            return self.updated_preference
-        
-        elif self.task == "LQ":
-            inner, output = self.lq_postprocessing(output_prompt)
-            return " "
+        return self.postprocessing(output_prompt)
     
     
     def _append_message(self, dialogs: list, role: str, content: str) -> None:
@@ -107,9 +80,6 @@ class LlamaChatBot(BaseChatBot):
     def prompt_formalizing(self, conv_rec=None, conv_rel=None) -> list:
         """Construct dialog sequence from available components."""
         dialogs = []
-        
-        # Add system instruction if exists
-        # self._append_message(dialogs, "system", self.instruction)
         
         # Add conversation history - summaries
         if conv_rel:
@@ -154,7 +124,6 @@ class Qwen251MChatBot(LlamaChatBot):
         if self.language == "fr":         
             self.translation_model = T5ForConditionalGeneration.from_pretrained("google-t5/t5-base")
             self.translation_model.eval()
-            
         
 
     def inference(self, input_pcm, max_gen_len=512):
@@ -185,33 +154,4 @@ class Qwen251MChatBot(LlamaChatBot):
         print(output_prompt)   
         print("Inference time: \n", time.time()-start_time)     
         
-        if self.task == "QA":
-            self.inner, self.expressed = self.post_processing(output_prompt)
-            print("\n --- Generated text --- ")
-            print("Original output: \n", output_prompt)
-            
-            print("\nProcessed output: ")
-            print("Inner speech: ", self.inner, "\nOutput: ", self.expressed)
-            return self.expressed
-        
-        elif self.task == "PU":
-            self.updated_preference = self.preference_postprocessing(output_prompt)
-            print("\n --- Updated preference --- ")
-            print("Original output: \n", output_prompt)
-            print("\nProcessed preference: \n", self.updated_preference)
-            
-            return self.updated_preference
-        
-        elif self.task == "AP":
-            self.next_action = self.action_postprocessing(output_prompt)
-            print("\n --- Predicted Next Action --- ")
-            print("Original output: \n", output_prompt)
-            print("\nProcessed output: \n", self.next_action)
-            
-            return self.next_action
-        
-        # todo
-        elif self.task == "LQ":
-            inner, output = self.lq_postprocessing(output_prompt)
-            return " "
-        
+        return self.postprocessing(output_prompt)

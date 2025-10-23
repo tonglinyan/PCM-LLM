@@ -63,8 +63,6 @@ class BaseChatBot:
             self.image = None
             if "image: " in input_pcm:
                 input_pcm, image = input_pcm.split("image: ")
-                #print(image)
-                #print("------------------ Image preprocessing -----------------")
                 self.image = image
             
             print("------------------ Text preprocessing -----------------")
@@ -82,8 +80,6 @@ class BaseChatBot:
             self.image = None
             if "image: " in input_pcm:
                 input_pcm, image = input_pcm.split("image: ")
-                #print(image)
-                #print("------------------ Image preprocessing -----------------")
                 self.image = image
             
             print("------------------ Text preprocessing -----------------")
@@ -101,8 +97,6 @@ class BaseChatBot:
             self.image = None
             if "image: " in input_pcm:
                 input_pcm, image = input_pcm.split("image: ")
-                #print(image)
-                #print("------------------ Image preprocessing -----------------")
                 self.image = image
             
             print("------------------ Text preprocessing -----------------")
@@ -136,8 +130,6 @@ class BaseChatBot:
             self.image = None
             if "image: " in input_pcm:
                 input_pcm, image = input_pcm.split("image: ")
-                #print(image)
-                #print("------------------ Image preprocessing -----------------")
                 self.image = image
             
             print("------------------ Text preprocessing -----------------")
@@ -220,7 +212,7 @@ class BaseChatBot:
         return cleaned
     
     
-    def post_processing(self, prompt):
+    def qa_postprocessing(self, prompt):
         print(prompt)
         lines = prompt.split('\n')
         inner_speech_lines = []
@@ -296,6 +288,37 @@ class BaseChatBot:
         return inner_speech, output
     
     
+    def postprocessing(self, output_prompt):
+        if self.task == "QA":
+            self.inner, self.expressed = self.qa_postprocessing(output_prompt)
+            print("\n --- Generated text --- ")
+            print("Original output: \n", output_prompt)
+            
+            print("\nProcessed output: ")
+            print("Inner speech: ", self.inner, "\nOutput: ", self.expressed)
+            return self.expressed
+        
+        elif self.task == "PU":
+            self.updated_preference = self.preference_postprocessing(output_prompt)
+            print("\n --- Updated preference --- ")
+            print("Original output: \n", output_prompt)
+            print("\nProcessed preference: \n", self.updated_preference)
+            
+            return self.updated_preference
+        
+        elif self.task == "AP":
+            self.next_action = self.action_postprocessing(output_prompt)
+            print("\n --- Predicted Next Action --- ")
+            print("Original output: \n", output_prompt)
+            print("\nProcessed output: \n", self.next_action)
+            
+            return self.next_action
+        
+        elif self.task == "LQ":
+            inner, output = self.lq_postprocessing(output_prompt)
+            return " "
+
+    
     def extract_json_block(self, text, key):
         """Extracts a JSON-like block under the given key."""
         text = text.replace("'", '"')  # Ensure quotes are double quotes
@@ -334,7 +357,6 @@ class BaseChatBot:
     def action_postprocessing(self, output):
         output = output.lower()
         json_output = self.extract_all(output)
-        #output = re.sub(r'(\d+(\.\d+)?)%', lambda m: str(float(m.group(1)) / 100), output)
         
         timestamp = int(time.time() * 1000)
         
@@ -427,7 +449,7 @@ class BaseChatBot:
                         max_length=128
                     )
                     print(output_summary_output)
-                    #ids = output.encoder_last_hidden_state.mean(dim=1).squeeze()
+
                     output_summary = self.t5tokenizer.decode(
                         output_summary_output[0],
                         skip_special_tokens=True, 
