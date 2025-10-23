@@ -29,23 +29,6 @@ class UpdatingHistory(TypedDict):
     preference_updating: str
     list: List
     
-"""
-class EmotionValence(TypedDict):
-    positive: float
-    negative: float
-    
-class Emotions(TypedDict):
-    FacialExpression: EmotionValence 
-    PhysiologicalExpression: EmotionValence
-        
-class Move(TypedDict):
-    action: str
-    direction: str
-
-class LLMOutput(TypedDict):
-    Emotion: Emotions 
-    Move: Move 
-"""
 
 class MemoryManagement(object):
     """
@@ -98,29 +81,6 @@ class MemoryManagement(object):
             self.pref_history = pref_doc.get("data", {})
         else:
             self.pref_history = {}
-            
-        """
-        if os.path.exists(self.history_path):    
-            with open(self.history_path, "r") as file:
-                # Load JSON data from the file
-                self.history = json.load(file)
-        else:
-            folder = os.path.dirname(self.history_path)
-            if not os.path.exists(folder):
-                os.mkdir(folder)
-            self.history = dict() 
-        
-        if os.path.exists(self.preference_path):    
-            with open(self.preference_path, "r") as file:
-                # Load JSON data from the file
-                self.pref_history = json.load(file)
-        else:
-            folder = os.path.dirname(self.preference_path)
-            if not os.path.exists(folder):
-                os.mkdir(folder)
-            self.pref_history = dict() 
-        """
-            
 
             
     def write_history(self):
@@ -128,10 +88,6 @@ class MemoryManagement(object):
         Saving the history with embeddings and without embeddings
         """
         
-        """
-        with open(self.history_path, "w") as json_file:
-            json.dump(self.history, json_file, indent=4)
-        """
         
         # Insert the history
         self.collection.replace_one(
@@ -164,12 +120,6 @@ class MemoryManagement(object):
             },
             upsert=True  
         )
-        
-        
-        """
-        with open(clean_path, "w") as json_file:
-            json.dump(history, json_file, indent=4)
-        """
             
             
     def write_pref_history(self):
@@ -186,11 +136,7 @@ class MemoryManagement(object):
             },
             upsert=True  
         )
-        """
-        with open(self.preference_path, "w") as json_file:
-            json.dump(self.pref_history, json_file, indent=4)
-        """
-
+    
     
     def _similarity(self, v1, v2):
         """
@@ -303,15 +249,6 @@ class MemoryManagement(object):
         if True:
             
             if image is not None:
-                """
-                if isinstance(image, str) :
-                    image_bytes = base64.b64decode(image)
-                else:
-                    # convert PIL Image into bytes
-                    buffer = io.BytesIO()
-                    #image.save(buffer, format="PNG")
-                    image_bytes = buffer.getvalue()
-                """
                 image_bytes = image
             else:
                 image_bytes = None
@@ -329,22 +266,4 @@ class MemoryManagement(object):
                                     summary=summary,    
                                     embedding=embedding, 
                                     image=image_bytes))
-        """
-        else: 
-            users = ["system", "ROSIE"]
-            for user in users:
-                if user not in self.history[host].keys():
-                    self.history[host][user] = [[]]
-                    
-                dialogs = self.history[host][user]
-                current_turn = len(dialogs) - 1
-                dialogs[current_turn].append(History(index=self.index, 
-                                    triples=None, 
-                                    query=None, 
-                                    inner_speech=None,
-                                    output=expressed,
-                                    preference_updating=pref_updating,
-                                    summary=summary,    
-                                    embedding=embedding))
-        """
 

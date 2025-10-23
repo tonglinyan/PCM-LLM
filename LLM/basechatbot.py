@@ -295,61 +295,6 @@ class BaseChatBot:
         output = output.strip().capitalize()
         return inner_speech, output
     
-    """
-    def post_processing(self, prompt):
-        
-        post processing process of output, 
-        including separation of inner speech and expressed speech, emotional expression removal
-       
-        is_list, asw_list = [], []
-        if "Inner speech" in prompt:
-            split_by_is = prompt.removeprefix("Inner speech:").split("Inner speech:")
-            for stc in split_by_is:
-                if "Output:" in stc: 
-                    split_by_ans = stc.split("Output:")
-                    asw = split_by_ans[1].strip().strip("**")
-                    asw_lines = asw.split("\n")
-                    # clean answer
-                    for line in asw_lines:
-                        if "|" not in line:
-                            if "(" in line and ")" in line:
-                                line = re.sub(r"\(.*?\)", "", line)
-                            line = self.truncate_text_to_50_words(line)
-                            asw_list.append(line)
-                            
-                    is_list.append(split_by_ans[0])
-                elif "Query:" in stc: 
-                    split_by_ans = stc.split("Query:")
-                    asw = split_by_ans[1].strip().strip("**")
-                    asw_lines = asw.split("\n")
-                    # clean answer
-                    for line in asw_lines:
-                        if "|" not in line:
-                            if "(" in line and ")" in line:
-                                line = re.sub(r"\(.*?\)", "", line)
-                            line = self.truncate_text_to_50_words(line)
-                            asw_list.append(line)
-                            
-                    is_list.append(split_by_ans[0])
-                else:
-                    is_list.append(stc)
-                
-            inner_speech = " ".join(is_list)
-            answer = " ".join(asw_list)
-            return inner_speech.strip(), answer.strip()
-        else:
-            asw_lines = prompt.split("\n")
-            # clean answer
-            for line in asw_lines:
-                if "|" not in line:
-                    if ":" in line:
-                        line_list = line.split(":")
-                        asw_list.append(line_list[1])
-                    else:
-                        asw_list.append(line)
-            
-            return None, " ".join(asw_list)
-    """
     
     def extract_json_block(self, text, key):
         """Extracts a JSON-like block under the given key."""
@@ -399,12 +344,6 @@ class BaseChatBot:
         self.action_DB.insert_new_action(self.triples, output, json_output, self.host, timestamp, self.image)
         self.action_DB.write_history()
 
-        """data = json.loads(output)
-        
-        key_list = ["Emotion", "Move"]
-        for key in data.keys():
-            if key not in key_list:
-                del data[key]"""
         return json_output
             
     def preference_postprocessing(self, output):
@@ -519,13 +458,4 @@ class BaseChatBot:
                                                    self.image)
             self.memory_DB.write_history()
             
-
-    """
-    elif model_name == "deepseek":
-        return DeepSeekChatBot(model_name, model_size, summerization, history_saving, history_calling, multimodal, language)
-    elif model_name == "pixtral":
-        return PixtralChatBot(model_name, model_size, summerization, history_saving, history_calling, multimodal, language)
-    elif model_name == "qwen2-vl":
-        return Qwen2VLChatBot(model_name, model_size, summerization, history_saving, history_calling, multimodal, language)
-    """
     
