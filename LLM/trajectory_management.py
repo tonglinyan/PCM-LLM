@@ -40,7 +40,7 @@ class ActionManagement(object):
     def load_history(self, filepath, model_id, connection_string) -> None:
         # Connect to MongoDB
         self.client = pymongo.MongoClient(connection_string)
-        self.db = self.client["trajectories"]
+        self.db = self.client["histories"]
         
         timestamp = "others"
         simulationId = filepath
