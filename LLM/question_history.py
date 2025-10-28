@@ -1,4 +1,5 @@
 import aioconsole
+#import copy
 
 args = None
 

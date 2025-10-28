@@ -5,7 +5,10 @@ import copy
 from utils import *
 import pymongo
 import time
+#import base64
+import io
 from bson import Binary
+
 
 class History(TypedDict):
     index: int
@@ -28,7 +31,6 @@ class UpdatingHistory(TypedDict):
     query: str
     preference_updating: str
     list: List
-    
 
 class MemoryManagement(object):
     """
@@ -88,7 +90,6 @@ class MemoryManagement(object):
         Saving the history with embeddings and without embeddings
         """
         
-        
         # Insert the history
         self.collection.replace_one(
             {"user_id": self.history_path},  
@@ -136,7 +137,7 @@ class MemoryManagement(object):
             },
             upsert=True  
         )
-    
+
     
     def _similarity(self, v1, v2):
         """
@@ -249,11 +250,11 @@ class MemoryManagement(object):
         if True:
             
             if image is not None:
-                image_bytes = image
+                buffer = io.BytesIO()
+                image.save(buffer, format="PNG")
+                image_bytes = buffer.getvalue()
             else:
                 image_bytes = None
-                
-            # print("image byte: ", image_bytes)
             
             dialogs = self.history[host][user]
             dialogs.append(History(index=self.index, 

@@ -5,6 +5,10 @@ from memory_management import *
 from trajectory_management import *
 import re
 import json
+from prompts import T5_summary_prompt
+import base64
+from io import BytesIO
+from PIL import Image
 
 
 class BaseChatBot:
@@ -21,6 +25,18 @@ class BaseChatBot:
 
     def load_models(self, model_size: str):
         raise NotImplementedError("Subclasses must implement this method.")
+    
+    def load_t5(self):
+        from transformers import T5Tokenizer, T5ForConditionalGeneration
+        
+        self.t5tokenizer = T5Tokenizer.from_pretrained("google-t5/t5-base")
+        self.summerize_model = T5ForConditionalGeneration.from_pretrained("google-t5/t5-base")
+        self.summerize_model.eval() 
+        
+        if self.language == "fr":         
+            self.translation_model = T5ForConditionalGeneration.from_pretrained("google-t5/t5-base")
+            self.translation_model.eval()
+            
 
     def create_logs(self, filepath):
         #full_path = "./Histories/" + filepath
@@ -45,6 +61,39 @@ class BaseChatBot:
             word_count += sentence_word_count
 
         return " ".join(truncated_text)
+    
+    
+    def base64_to_pil_image(self, base64_string):
+        """
+        Convert base64 string to PIL Image object in RGB mode.
+
+        Args:
+            base64_string: Base64 encoded image string
+            display: If True, display the image
+            save_path: If provided, save the image to this path (e.g., "./images/output.png")
+
+        Returns:
+            PIL Image object in RGB mode
+        """
+        import os
+
+        base64_string = base64_string.strip()
+
+        if base64_string.startswith('data:'):
+            base64_string = base64_string.split(',', 1)[1] if ',' in base64_string else base64_string
+
+        base64_string = ''.join(base64_string.split())
+
+        missing_padding = len(base64_string) % 4
+        if missing_padding:
+            base64_string += '=' * (4 - missing_padding)
+
+        image_bytes = base64.b64decode(base64_string)
+
+        image = Image.open(BytesIO(image_bytes))
+        image = image.convert('RGB')
+
+        return image
 
 
     def prompt_preprocessing(self, input_pcm):
@@ -63,7 +112,7 @@ class BaseChatBot:
             self.image = None
             if "image: " in input_pcm:
                 input_pcm, image = input_pcm.split("image: ")
-                self.image = image
+                self.image = self.base64_to_pil_image(image)
             
             print("------------------ Text preprocessing -----------------")
             
@@ -80,7 +129,7 @@ class BaseChatBot:
             self.image = None
             if "image: " in input_pcm:
                 input_pcm, image = input_pcm.split("image: ")
-                self.image = image
+                self.image = self.base64_to_pil_image(image)
             
             print("------------------ Text preprocessing -----------------")
             print(input_pcm)
@@ -97,7 +146,7 @@ class BaseChatBot:
             self.image = None
             if "image: " in input_pcm:
                 input_pcm, image = input_pcm.split("image: ")
-                self.image = image
+                self.image = self.base64_to_pil_image(image)
             
             print("------------------ Text preprocessing -----------------")
             print(input_pcm)
@@ -130,7 +179,7 @@ class BaseChatBot:
             self.image = None
             if "image: " in input_pcm:
                 input_pcm, image = input_pcm.split("image: ")
-                self.image = image
+                self.image = self.base64_to_pil_image(image)
             
             print("------------------ Text preprocessing -----------------")
             print(input_pcm)
@@ -172,7 +221,6 @@ class BaseChatBot:
         """
         Return the vector representation of input text
         """
-
         input_token = self.t5tokenizer(
             text, 
             return_tensors="pt", 

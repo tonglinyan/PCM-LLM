@@ -1,0 +1,1 @@
+T5_summary_prompt = """"User": {input} "Assistant": {output} """

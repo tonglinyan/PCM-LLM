@@ -16,11 +16,22 @@ parser.add_argument('--history_filepath', default='simulation_history', type=str
 parser.add_argument('--max_gen_len', default=8192, type=int, help='max generation length')
 parser.add_argument('--max_seq_len', default=8192, type=int, help='max sequence length')
 parser.add_argument('--model_name', default='llama3.1', type=str, choices=['llama3.1', 'qwen2.5'], help='the model name to do the inference.')
-parser.add_argument('--model_size', default='8B', choices=["8B", "70B"], type=str, help='model size, available size: 8B, 80B')
+parser.add_argument('--model_size', default='8B', choices=["8B", "32B"], type=str, help='model size, available size: 8B, 70B, 7B, 30B, 32B')
 parser.add_argument('--summary', default=False, action="store_true", help='whether summerize the conversation.')
 parser.add_argument('--remote', default=False, action="store_true", help="whether act as a server, waiting for connection of a client.")
 parser.add_argument('--multimodal', default=False, action="store_true", help='whether using multimodal')
 args = parser.parse_args()
+
+# Define valid model size combinations for each model
+MODEL_SIZE_COMPATIBILITY = {
+    'llama3.1': ['8B'],
+    'qwen2.5': ['8B', '32B'],
+}
+
+# Validate model name and size compatibility
+if args.model_size not in MODEL_SIZE_COMPATIBILITY.get(args.model_name, []):
+    valid_sizes = ', '.join(MODEL_SIZE_COMPATIBILITY.get(args.model_name, []))
+    parser.error(f"Model '{args.model_name}' does not support size '{args.model_size}'. Valid sizes for {args.model_name}: {valid_sizes}")
 
 chatbot = None
 
@@ -28,7 +39,7 @@ async def handle(request):
     global chatbot
     try:
         data = await request.text()
-        print(data)
+        #print(data)
         output = chatbot.inference(data, max_gen_len=args.max_gen_len)
         chatbot.conversation_summerization()
         return web.Response(text=output)
@@ -102,7 +113,7 @@ async def main():
         chatbot.create_logs(args.history_filepath)
         print("previous data loaded... ")
         while True:
-            output = chatbot.inference(data, max_gen_len=8192)
+            output = chatbot.inference(data, max_gen_len=args.max_gen_len)
             chatbot.conversation_summerization()
             print("--------------------- Get input ----------------------")
             data = input()

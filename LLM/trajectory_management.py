@@ -56,6 +56,29 @@ class ActionManagement(object):
             self.history = history_doc.get("data", {})
         else:
             self.history = {}
+    
+            
+        """
+        if os.path.exists(self.history_path):    
+            with open(self.history_path, "r") as file:
+                # Load JSON data from the file
+                self.history = json.load(file)
+        else:
+            folder = os.path.dirname(self.history_path)
+            if not os.path.exists(folder):
+                os.mkdir(folder)
+            self.history = dict() 
+        
+        if os.path.exists(self.preference_path):    
+            with open(self.preference_path, "r") as file:
+                # Load JSON data from the file
+                self.pref_history = json.load(file)
+        else:
+            folder = os.path.dirname(self.preference_path)
+            if not os.path.exists(folder):
+                os.mkdir(folder)
+            self.pref_history = dict() 
+        """
             
             
     def write_history(self):
@@ -72,6 +95,10 @@ class ActionManagement(object):
             },
             upsert=True  
         )
+        """
+        with open(self.preference_path, "w") as json_file:
+            json.dump(self.pref_history, json_file, indent=4)
+        """
             
     
     def insert_new_action(self, triples, full_output, output, host, timeStamp, image=None):
@@ -80,15 +107,9 @@ class ActionManagement(object):
                 self.history[host] = []
                 
             if image is not None:
-                if isinstance(image, str) and image.startswith("data:image"):
-                    _, image_data = image.split(",", 1)
-                    image_bytes = base64.b64decode(image_data)
-                else:
-                    buffer = io.BytesIO()
-                    image.save(buffer, format="PNG")
-                    image_bytes = buffer.getvalue()
-            else:
-                image_bytes = image
+                buffer = io.BytesIO()
+                image.save(buffer, format="PNG")
+                image_bytes = buffer.getvalue()
                 
             dialogs = self.history[host]
             dialogs.append(
